@@ -4,12 +4,12 @@ import random
 st.title("展開 Level.2")
 
 if "b" not in st.session_state:
-    st.session_state.b=random.randint(-5,5)
-    st.session_state.c=random.randint(-5,5)
+    st.session_state.b=random.randint(-9,9)
+    st.session_state.c=random.randint(-9,9)
 
 if st.button("新しい問題"):
-    st.session_state.b=random.randint(-5,5)
-    st.session_state.c=random.randint(-5,5)
+    st.session_state.b=random.randint(-9,9)
+    st.session_state.c=random.randint(-9,9)
 
 b=st.session_state.b
 c=st.session_state.c
