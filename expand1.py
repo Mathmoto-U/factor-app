@@ -10,7 +10,6 @@ if "b" not in st.session_state:
             st.session_state.b = b
             st.session_state.c = c
             break
-    st.write(f"b = {st.session_state.b}, c = {st.session_state.c}")
     st.session_state.X=random.choice(['x','x','x','x','y','y','a','a','b','m','n','x','x','x','x','y','y','a','a','b','m','n','♡'])
 
 if st.button("新しい問題"):
