@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-st.title("展開 Level.2")
+st.title("展開 Level.5")
 
 if "b" not in st.session_state:
     st.session_state.b=random.randint(-9,9)
