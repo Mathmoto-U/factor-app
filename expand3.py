@@ -4,7 +4,7 @@ import random
 st.title("展開 Level.3")
 
 if "a" not in st.session_state:
-    st.session_state.a=random.randint(1, 9)
+    st.session_state.a=random.randint(2, 9)
     st.session_state.b=random.randint(-9, 9)
     st.session_state.c=random.randint(-9, 9)
 
@@ -49,7 +49,7 @@ def 根の積(x,y,z):
     if y==z:
         return f"{根(x,y)}^2"
     else:
-        f"{根(x,y)}{根(x,z)}"
+        return f"{根(x,y)}{根(x,z)}"
 
 展開=f"{a*a}x^2{一次(a*b+a*c)}{定数(a*b*c)}"
 因数分解=根の積(a,b,c)
