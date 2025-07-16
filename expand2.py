@@ -1,0 +1,42 @@
+import streamlit as st
+import random
+
+st.title("展開Level.2")
+
+if "b" not in st.session_state:
+    st.session_state.b=random.randint(-9,9)
+
+if st.button("新しい問題"):
+    st.session_state.b=random.randint(-9,9)
+b=st.session_state.b
+
+def 一次(x):
+    if x==0:
+        return ""
+    elif x>0:
+        return f"+{x}x"
+    else:
+        return f"{x}x"
+def 定数(x):
+    if x==0:
+        return ""
+    else:
+        return f"+{x}"
+
+def 平方(y):
+    if y==0:
+        return "x^2"
+    elif y>0:
+        return f"(x+{y})^2"
+    else:
+        return f"(x{y})^2"
+
+展開=f"x^2{一次(2*b)}{定数(b*b)}"
+因数分解=平方(b)
+
+st.markdown("次の式を展開せよ：")
+st.latex(因数分解)
+
+if st.button("答えを見る"):
+    st.markdown("答え：")
+    st.latex(展開)
