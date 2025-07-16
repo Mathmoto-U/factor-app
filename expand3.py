@@ -1,25 +1,20 @@
 import streamlit as st
 import random
 
-st.title("展開Level.2")
+st.title("展開Level.3")
 
 if "b" not in st.session_state:
-    st.session_state.b=random.randint(-12,12)
+    st.session_state.b=random.choice([i for i in range(-15, 16) if i != 0])
 
 if st.button("新しい問題"):
-    st.session_state.b=random.randint(-12,12)
+    st.session_state.b=random.choice([i for i in range(-15, 16) if i != 0])
 b=st.session_state.b
 
 def 定数(x):
-    if x==0:
-        return ""
-    else:
         return x
 
 def 根の積(y):
-    if y==0:
-        return "x^2"
-    elif y>0:
+    if y>0:
         return f"(x+{y})(x-{y})"
     else:
         return f"(x{y})(x+{-y})"
