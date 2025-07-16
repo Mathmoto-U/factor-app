@@ -1,0 +1,77 @@
+import streamlit as st
+import random
+
+st.title("展開 Level.4")
+
+if "a" not in st.session_state:
+    st.session_state.a=random.randint(2,5)
+    st.session_state.b=random.randint(-5,5)
+    st.session_state.c=random.randint(-5,5)
+
+if st.button("新しい問題"):
+    st.session_state.a=random.randint(2,5)
+    st.session_state.b=random.randint(-5,5)
+    st.session_state.c=random.randint(-5,5)
+a=st.session_state.a
+b=st.session_state.b
+c=st.session_state.c
+
+def 二次(x):
+    if x==1:
+        return "x^2"
+    else:
+        return f"{x}x^2"
+
+def 一次(x):
+    if x==1:
+        return "+xy"
+    elif x==-1:
+        return "-xy"
+    elif x==0:
+        return ""
+    elif x>0:
+        return f"+{x}xy"
+    else:
+        return f"{x}xy"
+
+def 定数(x):
+    if x==1:
+        return "+y^2"
+    elif x==-1:
+        return "-y^2"
+    elif x>0:
+        return f"+{x}y^2"
+    elif x==0:
+        return ""
+    else:
+        return f"{x}y^2"
+
+def 根(x,y):
+    if y==1:
+        return f"({x}x+y)"
+    elif y==-1:
+        return f"({x}x-y)"
+    elif y==0:
+        return f"{x}x"
+    elif y>0:
+        return f"({x}x+{y}y)"
+    else:
+        return f"({x}x{y}y)"
+
+def 根の積(x,y,z):
+    if y==z==0:
+        return f"({根(x,y)})^2"
+    if y==z:
+        return f"{根(x,y)}^2"
+    else:
+        return f"{根(x,y)}{根(x,z)}"
+
+展開=f"{二次(a*a)}{一次(a*b+a*c)}{定数(b*c)}"
+因数分解=根の積(a,b,c)
+
+st.markdown("次の式を展開せよ：")
+st.latex(因数分解)
+
+if st.button("答えを見る"):
+    st.markdown("答え：")
+    st.latex(展開)
