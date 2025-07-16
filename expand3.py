@@ -34,7 +34,7 @@ def 一次(x):
         return f"{符号付(x)}x"
 
 def 定数(x):
-    if x == 0:
+    if x==0:
         return ""
     else:
         return 符号付(x)
