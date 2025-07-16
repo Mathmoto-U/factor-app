@@ -4,14 +4,14 @@ import random
 st.title("展開 Level.3")
 
 if "a" not in st.session_state:
-    st.session_state.a=random.randint(2, 9)
-    st.session_state.b=random.randint(-9, 9)
-    st.session_state.c=random.randint(-9, 9)
+    st.session_state.a=random.randint(2,5)
+    st.session_state.b=random.randint(-5,5)
+    st.session_state.c=random.randint(-5,5)
 
 if st.button("新しい問題"):
-    st.session_state.a=random.randint(2, 9)
-    st.session_state.b=random.randint(-9, 9)
-    st.session_state.c=random.randint(-9, 9)
+    st.session_state.a=random.randint(2,5)
+    st.session_state.b=random.randint(-5,5)
+    st.session_state.c=random.randint(-5,5)
 
 a=st.session_state.a
 b=st.session_state.b
@@ -46,7 +46,9 @@ def 根(x,y):
         return f"({x}x{符号付(y)})"
 
 def 根の積(x,y,z):
-    if y==z:
+    if y==z==0:
+        return f"({根(x,y)})^2"
+    elif y==z:
         return f"{根(x,y)}^2"
     else:
         return f"{根(x,y)}{根(x,z)}"
