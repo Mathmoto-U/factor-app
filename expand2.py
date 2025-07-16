@@ -16,7 +16,7 @@ c=st.session_state.c
 
 def 一次(x):
     if x==1:
-        return "+x"
+        return "+xy"
     elif x==-1:
         return "-xy"
     elif x==0:
