@@ -4,34 +4,30 @@ import random
 st.title("展開Level.2")
 
 if "b" not in st.session_state:
-    st.session_state.b=random.randint(-9,9)
+    st.session_state.b=random.choice([i for i in range(-15,16) if i != 0])
+    st.session_state.X=random.choice(['x','y','z','a'])
 
 if st.button("新しい問題"):
-    st.session_state.b=random.randint(-9,9)
+    st.session_state.b=random.choice([i for i in range(-15,16) if i != 0])
+    st.session_state.X=random.choice(['x','x','x','x','x','x','y','z','a','b','c','p','q'])
 b=st.session_state.b
+X=st.session_state.X
 
 def 一次(x):
-    if x==0:
-        return ""
-    elif x>0:
-        return f"+{x}x"
+    if x>0:
+        return f"+{x}{X}"
     else:
-        return f"{x}x"
+        return f"{x}{X}"
 def 定数(x):
-    if x==0:
-        return ""
-    else:
         return f"+{x}"
 
 def 平方(y):
-    if y==0:
-        return "x^2"
-    elif y>0:
-        return f"(x+{y})^2"
+    if y>0:
+        return f"({X}+{y})^2"
     else:
-        return f"(x{y})^2"
+        return f"({X}{y})^2"
 
-展開=f"x^2{一次(2*b)}{定数(b*b)}"
+展開=f"{X}^2{一次(2*b)}{定数(b*b)}"
 因数分解=平方(b)
 
 st.markdown("次の式を展開せよ：")
