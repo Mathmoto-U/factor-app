@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-st.title("因数分解 Level.1")
+st.title("展開 Level.1")
 
 # 最初のセッション初期化
 if "b" not in st.session_state:
