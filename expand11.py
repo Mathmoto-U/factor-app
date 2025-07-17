@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-st.title("展開Level.1")
+st.title("展開 1の1")
 
 if "b" not in st.session_state:
     while True:
