@@ -1,15 +1,15 @@
 import streamlit as st
 import random
 
-st.title("展開 1の1")
+st.title("展開 1の2")
 
 if "b" not in st.session_state:
-    st.session_state.b=random.choice([i for i in range(-15,16) if i != 0])
-    st.session_state.X=random.choice(['x','y','z','a'])
+    st.session_state.b=random.choice([i for i in range(-10,11) if i != 0])
+    st.session_state.X=random.choice(['x','x','x','x','x','x','y','y','a','a','b','b','m','n'])
 
 if st.button("新しい問題"):
-    st.session_state.b=random.choice([i for i in range(-15,16) if i != 0])
-    st.session_state.X=random.choice(['x','x','x','x','x','x','y','z','a','b','c','p','q'])
+    st.session_state.b=random.choice([i for i in range(-10,11) if i != 0])
+    st.session_state.X=random.choice(['x','x','x','x','x','x','y','y','a','a','b','b','m','n'])
 b=st.session_state.b
 X=st.session_state.X
 
