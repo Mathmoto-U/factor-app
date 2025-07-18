@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-st.title("展開Level.2")
+st.title("展開 1の1")
 
 if "b" not in st.session_state:
     st.session_state.b=random.choice([i for i in range(-15,16) if i != 0])
