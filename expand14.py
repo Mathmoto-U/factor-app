@@ -1,18 +1,17 @@
 import streamlit as st
 import random
 
-st.title("展開 Level.4")
+st.title("展開 1の4")
 
 if "b" not in st.session_state:
-    st.session_state.b = random.randint(-9, 9)
-    st.session_state.c = random.randint(-9, 9)
+    st.session_state.b=random.choice([i for i in range(-15, 16) if i != 0])
+    st.session_state.X=random.choice('x','x','x','x','x','x','y','y','a','a','b','b','m','n')
 
 if st.button("新しい問題"):
-    st.session_state.b = random.randint(-9, 9)
-    st.session_state.c = random.randint(-9, 9)
-
-b = st.session_state.b
-c = st.session_state.c
+    st.session_state.b=random.choice([i for i in range(-15, 16) if i != 0])
+    st.session_state.X=random.choice('x','x','x','x','x','x','y','y','a','a','b','b','m','n')
+b=st.session_state.b
+X=st.session_state.X
 
 def 符号付(x):
     return f"+{x}" if x > 0 else str(x)
