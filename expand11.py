@@ -38,7 +38,24 @@ def 定数(x):
         return f"+{x}"
     else:
         return f"{x}"
-
+def 和(x,y):
+    if x>0 and y>0:
+        return f"{x}+{y}"
+    elif x<0 and y>0:
+        return f"({x})+{y}"
+    elif x>0 and y<0:
+        return f"{x}+({y})"
+    else:
+        return f"({x})+({y})"
+def 積(x,y):
+    if x>0 and y>0:
+        return f"{x}×{y}"
+    elif x>0 and y<0:
+        return f"{x}×({y})"
+    elif x<0 and y>0:
+        return f"({x})×{y}"
+    else:
+        return f"({x})×({y})"
 def 根(y):
     if y>0:
         return f"({X}+{y})"
@@ -55,5 +72,6 @@ st.markdown("次の式を展開せよ：")
 st.latex(因数分解)
 
 if st.button("答えを見る"):
-    st.markdown("答え：")
-    st.latex(展開)
+    st.markdown(f"答え： ${展開}$")
+    st.markdown(f"解説： ${X}$ の係数は ${和(b,c)}={b+c}$")
+    st.markdown(f"<span style='visibility:hidden'>解 説 ：</span>定数項は<span style='visibility:hidden'>${X}$</span> ${積(b,c)}={b*c}$", unsafe_allow_html=True)
